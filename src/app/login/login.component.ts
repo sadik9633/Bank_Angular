@@ -12,9 +12,9 @@ data="your perfect banking partner"
 inputplaceholder="Account number"
 
 // intialasation
-acno='' //or acno:any
+//acno='' //or acno:any
 
-psw=''
+//jpsw=''
 
 userDetails:any={
   1000:{acno:1000,username:"anu",password:"abc123",balance:0},
@@ -30,20 +30,57 @@ userDetails:any={
 
  }
 
- login(){
-  alert('login clicked')
- }
 
- acnoChange(event:any){
-  this.acno=event.target.value
-  console.log(this.acno);
+ //login(){
+ //var acno=this.acno
+//var psw=this.psw
+  //var userDetails=this.userDetails
+ // if(acno in userDetails){
+   //if(psw==userDetails[acno]["password"]){
+    // alert ("login success")
+    //}
+    //else{
+    //  alert ("incurrect password")
+    //}
+  //}
+  //else{
+    //alert ("account number incurrect")
+  //}
+ // alert('login clicked')
+ //}
+
+ login(a:any,b:any){
+  //console.log(a.value);
   
+     var acno=a.value
+     var psw=b.value
+  var userDetails=this.userDetails
+ if(acno in userDetails){
+   if(psw==userDetails[acno]["password"]){
+     alert ("login success")
+    }
+    else{
+     alert ("incurrect password")
+    }
+  }
+  else{
+    alert ("account number incurrect")
+  }
+
+ //
+ // alert('login clicked')
  }
 
- pswrdChange(event:any){
-  this.psw=event.target.value
-  console.log(this.psw);
+
+//acnoChange(event:any){
+ // this.acno=event.target.value
+  //console.log(this.acno);
   
- }
+ //}
 
+ //pswrdChange(event:any){
+  //this.psw=event.target.value
+  //console.log(this.psw);
+  
+// }
 }
