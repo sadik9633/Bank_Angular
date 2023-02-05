@@ -37,20 +37,14 @@ psw=''
  login(){
  var acno=this.acno
 var psw=this.psw
-  var userDetails=this.ds.userDetails
-  if(acno in userDetails){
-   if(psw==userDetails[acno]["password"]){
-     alert ("login success")
-     this.router.navigateByUrl('dashboard')
-    }
-    else{
-      alert ("incurrect password")
-    }
-  }
-  else{
-    alert ("account number incurrect")
-  }
-  //alert('login clicked')
+ const result=this.ds.login(acno,psw)
+ if(result){
+  alert('login success')
+  this.router.navigateByUrl('dashboard')
+ }
+ else{
+  alert("incorrect account number or password")
+ }
  }
 
  //login(a:any,b:any){

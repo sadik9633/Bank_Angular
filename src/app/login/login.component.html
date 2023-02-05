@@ -2,10 +2,10 @@
 
 <div class="container w-50 border border-white text-center p-5 mt-3" style="background-color:rgb(194, 165, 165); opacity:0.8;">
     <h2>Sign In To Your Bank Account</h2>
-    <form action="">
+    <form action=""(ngSubmit)="login()">
          <div class="p-3 mt-3"><input [(ngModel)]="acno" id="acid" name="acnum1" class="form-control" type="text" [placeholder]="inputplaceholder"></div>
          <div class="p-3 mt-3"><input [(ngModel)]="psw"  id="psw1" name="paswrd1" class="form-control" type="password " placeholder="Enter Password"></div>
-         <div class="p-3 mt-3"><button type="button" (click)="login()" class="btn btn-outline-dark">login</button></div>
+         <div class="p-3 mt-3"><button type="submit"  class="btn btn-outline-dark">login</button></div>
       
          <div class="text-center text-white"><strong>not register</strong>?<a style="text-decoration: none; color: rgb(83, 60, 6); " routerLink="register"><strong>register</strong></a></div>
     </form>
