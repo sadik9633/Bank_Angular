@@ -47,4 +47,58 @@ export class DataService {
   }
   //alert('login clicked')
   }
-}
+
+  deposit(acnum:any ,password:any,  amount:any){
+  let userDetails=this.userDetails
+  //convert string amount to number
+  var amnt=parseInt(amount)
+  if(acnum in userDetails){
+    if(password==userDetails[acnum]["password"]){
+      //update balance
+      userDetails[acnum]["balance"]+=amnt
+      
+      
+      //return current balance
+      return userDetails[acnum]["balance"]
+    }
+    else{
+      return false
+    }
+  }
+  else{
+    return false
+  }
+  }
+
+  withdraw(acnum:any ,password:any,  amount:any){
+    let userDetails=this.userDetails
+    //convert string amount to number
+    var amnt=parseInt(amount)
+    if(acnum in userDetails){
+      if(password==userDetails[acnum]["password"]){
+        if(amnt<userDetails[acnum]["balance"]){
+
+        
+        //update balance
+        userDetails[acnum]["balance"]-=amnt
+        
+        
+        //return current balance
+        return userDetails[acnum]["balance"]
+      }
+      else{
+        alert(`insufficent balance`)
+          return false
+      }
+    }
+      else{
+        alert(`incurrect password`)
+        return false
+      }
+    }
+    else{
+      alert(`incurrect account number`)
+      return false
+    }
+    }
+  }
