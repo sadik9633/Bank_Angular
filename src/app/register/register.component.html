@@ -1,9 +1,9 @@
-<div class="container w-50 border border-white text-center p-5 mt-3" style="background-color:rgb(194, 165, 165); opacity:0.8;">
+<div class="container w-50  text-center p-5 mt-3" style="background-color:rgba(65,58,42,0.58); opacity:0.8;">
     <h2>Sign up To Bank</h2>
-    <form action="">
-        <div class="p-3 mt-3"><input [(ngModel)]="uname"  id="unamid" name="usern1" class="form-control" type="text" placeholder="Enter user name"></div>
-         <div class="p-3 mt-3"><input [(ngModel)]="acno"  id="acid" name="acnum1" class="form-control" type="text" placeholder="Enter Account Number"></div>
-         <div class="p-3 mt-3"><input [(ngModel)]="psw"  id="psw1" name="paswrd1" class="form-control" type="password " placeholder="Enter Password"></div>
+    <form [formGroup]="registerForm" action="">
+        <div class="p-3 mt-3"><input formControlName="uname" id="unamid" name="usern1" class="form-control" type="text" placeholder="Enter user name"></div>
+         <div class="p-3 mt-3"><input formControlName="acno"  id="acid" name="acnum1" class="form-control" type="text" placeholder="Enter Account Number"></div>
+         <div class="p-3 mt-3"><input formControlName="psw" id="psw1" name="paswrd1" class="form-control" type="password " placeholder="Enter Password"></div>
          <div class="p-3 mt-3"><button type="button" (click)="register()" class="btn btn-info">signup</button></div>
       
          

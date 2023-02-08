@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
 
   
-  constructor(private ds:DataService) {
+  constructor(private ds:DataService,) {
     this.user=this.ds.currentUser
   }
 

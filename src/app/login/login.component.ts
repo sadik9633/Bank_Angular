@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -13,10 +14,7 @@ data="your perfect banking partner"
 
 inputplaceholder="Account number"
 
-// intialasation
-acno='' //or acno:any
 
-psw=''
 
 
  // userDetails:any={
@@ -27,16 +25,21 @@ psw=''
 // }
 
 
- constructor(private router:Router,private ds:DataService) {}
+ constructor(private router:Router,private ds:DataService,private fb:FormBuilder) {}
 
+ loginForm=this.fb.group({
+  acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+  psw:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]]
+ })
  ngOnInit(): void{
 
  }
 
 
  login(){
- var acno=this.acno
-var psw=this.psw
+ var acno=this.loginForm.value.acno
+var psw=this.loginForm.value.psw
+if(this.loginForm.valid){
  const result=this.ds.login(acno,psw)
  if(result){
   alert('login success')
@@ -45,8 +48,11 @@ var psw=this.psw
  else{
   alert("incorrect account number or password")
  }
+ 
  }
-
+ else{
+  alert('invalid form')
+ }
  //login(a:any,b:any){
   //console.log(a.value);
   
@@ -81,4 +87,5 @@ var psw=this.psw
   //console.log(this.psw);
   
 // }
+}
 }
