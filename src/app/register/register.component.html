@@ -2,8 +2,17 @@
     <h2>Sign up To Bank</h2>
     <form [formGroup]="registerForm" action="">
         <div class="p-3 mt-3"><input formControlName="uname" id="unamid" name="usern1" class="form-control" type="text" placeholder="Enter user name"></div>
+        <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
+        <p class="text-danger">accept only charecters</p>
+        </div>
          <div class="p-3 mt-3"><input formControlName="acno"  id="acid" name="acnum1" class="form-control" type="text" placeholder="Enter Account Number"></div>
-         <div class="p-3 mt-3"><input formControlName="psw" id="psw1" name="paswrd1" class="form-control" type="password " placeholder="Enter Password"></div>
+         <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched">
+            <p class="text-danger">accept only numbers</p>
+            </div>
+         <div class="p-3 mt-3"><input formControlName="psw" id="psw1" name="paswrd1" class="form-control" type="password" placeholder="Enter Password"></div>
+         <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched">
+            <p class="text-danger">accept only numbers and charectors</p>
+            </div>
          <div class="p-3 mt-3"><button type="button" (click)="register()" class="btn btn-info">signup</button></div>
       
          

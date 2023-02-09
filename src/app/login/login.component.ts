@@ -26,7 +26,7 @@ inputplaceholder="Account number"
 
 
  constructor(private router:Router,private ds:DataService,private fb:FormBuilder) {}
-
+//model form
  loginForm=this.fb.group({
   acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
   psw:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]]

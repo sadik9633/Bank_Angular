@@ -9,12 +9,12 @@
         <div class="container w-75 rounded text-center p-5 mt-2"
             style="background-color:rgba(65,58,42,0.58); opacity:0.8;">
             <h1 class="text-white">Deposit</h1>
-            <form action="">
-                <div class="p-3 mt-2"><input [(ngModel)]="acno" id="acid" name="acnum1" class="form-control" type="text"
+            <form [formGroup]="depositForm" action="">
+                <div class="p-3 mt-2"><input formControlName="acno" id="acid" name="acnum1" class="form-control" type="text"
                         placeholder="Enter account number"></div>
-                <div class="p-3 mt-2"><input [(ngModel)]="psw" id="psw1" name="paswrd1" class="form-control" type="password "
+                <div class="p-3 mt-2"><input formControlName="psw" id="psw1" name="paswrd1" class="form-control" type="password"
                         placeholder="Enter Password"></div>
-                <div class="p-3 mt-2"><input [(ngModel)]="amnt" id="amouid" name="amnt1" class="form-control" type="text"
+                <div class="p-3 mt-2"><input formControlName="amnt" id="amouid" name="amnt1" class="form-control" type="text"
                         placeholder="Amount">
                 </div>
 
@@ -30,12 +30,12 @@
         <div class="container w-75 rounded text-center p-5 mt-2"
             style="background-color:rgb(65,58,42,0.58); opacity:0.8;">
             <h1 class="text-white">Withdraw</h1>
-            <form action="">
-                <div class="p-3 mt-2"><input [(ngModel)]="acno1" id="acid2" name="acnum2" class="form-control" type="text"
+            <form [formGroup]="withdrawForm" action="">
+                <div class="p-3 mt-2"><input formControlName="acno1" id="acid2" name="acnum2" class="form-control" type="text"
                         placeholder="Enter account number"></div>
-                <div class="p-3 mt-2"><input [(ngModel)]="psw1" id="psw2" name="paswrd2" class="form-control" type="password "
+                <div class="p-3 mt-2"><input formControlName="psw1" id="psw2" name="paswrd2" class="form-control" type="password"
                         placeholder="Enter Password"></div>
-                <div class="p-3 mt-2"><input [(ngModel)]="amnt1" id="amouid1" name="amnt2" class="form-control" type="text"
+                <div class="p-3 mt-2"><input formControlName="amnt1" id="amouid1" name="amnt2" class="form-control" type="text"
                         placeholder="Amount"></div>
 
                 <div class="p-3 mt-2"><button (click)="withdraw()" type="button" class="btn btn-light">Withdraw</button></div>

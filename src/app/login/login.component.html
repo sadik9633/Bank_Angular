@@ -4,7 +4,13 @@
     <h2 style="color: aliceblue;">Sign In To Your Bank Account</h2>
     <form [formGroup]="loginForm" action="" (ngSubmit)="login()">
          <div class="p-3 mt-3"><input formControlName="acno" id="acid" name="acnum1" class="form-control" type="text" [placeholder]="inputplaceholder"></div>
-         <div class="p-3 mt-3"><input  formControlName="psw" id="psw1" name="paswrd1" class="form-control" type="password " placeholder="Enter Password"></div>
+         <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+            <p class="text-danger">accept only numbers</p>
+            </div>
+         <div class="p-3 mt-3"><input  formControlName="psw" id="psw1" name="paswrd1" class="form-control" type="password" placeholder="Enter Password"></div>
+         <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+            <p class="text-danger">accept only numbers and charectors</p>
+            </div>
          <div class="p-3 mt-3"><button type="submit"  class="btn btn-dark">login</button></div>
       
          <div class="text-center text-white"><strong>not register</strong>?<a style="text-decoration: none; color: rgb(237, 194, 93); " routerLink="register"><strong>register</strong></a></div>
