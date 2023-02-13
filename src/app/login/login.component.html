@@ -1,6 +1,6 @@
 <h3 class="ms-2 p-2 mt-2 text-white text-center">{{data}}</h3>
 
-<div class="container w-50  text-center p-5 mt-3" style="background-color:rgba(65,58,42,0.58); opacity:0.8;">
+<div class="container w-50  text-center p-5 mt-3" style="background-color:rgba(65,58,42,0.58);">
     <h2 style="color: aliceblue;">Sign In To Your Bank Account</h2>
     <form [formGroup]="loginForm" action="" (ngSubmit)="login()">
          <div class="p-3 mt-3"><input formControlName="acno" id="acid" name="acnum1" class="form-control" type="text" [placeholder]="inputplaceholder"></div>
@@ -11,7 +11,7 @@
          <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
             <p class="text-danger">accept only numbers and charectors</p>
             </div>
-         <div class="p-3 mt-3"><button type="submit"  class="btn btn-dark">login</button></div>
+         <div class="p-3 mt-3"><button type="submit"  class="btn btn-success">login</button></div>
       
          <div class="text-center text-white"><strong>not register</strong>?<a style="text-decoration: none; color: rgb(237, 194, 93); " routerLink="register"><strong>register</strong></a></div>
     </form>
