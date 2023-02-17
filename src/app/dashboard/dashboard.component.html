@@ -1,3 +1,6 @@
+<div class="text-center text-white mt-3">
+    <h5>{{datedetails | date:'short'}}</h5>
+</div>
 <div class="text-start p-3 pe-4">
     <button (click)="deleteac()" class="btn btn-danger" type="button">Delete Account</button>
     <button  (click)="logout()" class="btn btn-warning ms-2" type="button">Log out</button>
@@ -8,7 +11,7 @@
 <a style="text-decoration: none; color: rgb(255, 255, 255);" routerLink="/transaction">VIew Transaction History</a>
 </div>
 
-<app-deleteconfirm [item]="acno"></app-deleteconfirm>
+<app-deleteconfirm (oncancel)="cancel()" [item]="acno"></app-deleteconfirm>
 
 <div [ngClass]="acno?'style':'' " class="container-fluid row mb-5 p-5">
     <div  class="text-center container col-lg-6 col-md-12">

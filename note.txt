@@ -102,4 +102,21 @@ parent child components communication
 @Input()  parent to child data sharing
 @Output() child to parent data sharing
 
- 
+Event creation in angular
+-------------------------
+we can create our own events in angular project
+
+EventEmitter - calss used to create   userdefined events 
+
+      eventname=new EventEmitter()
+
+      emit() to define the working time/to start the event
+
+Date and time
+-------------
+class - Date  
+
+Angular Pipes
+-------------
+
+to convert datas into another format
