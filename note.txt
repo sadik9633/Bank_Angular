@@ -120,3 +120,25 @@ Angular Pipes
 -------------
 
 to convert datas into another format
+
+API creation in Angular
+-----------------------
+HttpClientModule  - module to create web api callsites
+
+HttpClient        - class inside the httpclientmodule
+
+Folder     file   class  methods
+package  modules  class  methods
+
+asynchronous code handling in ts
+--------------------------------
+js - promise - resolve  then()
+             - reject   catch()
+ts - observable - resolve suscribe()
+                - reject catch()
+
+Header generation for api request
+---------------------------------
+
+HttpHeader - class used to generate header 
+

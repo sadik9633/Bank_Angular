@@ -7,12 +7,16 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
+
 transactionData:any
 
 constructor(private ds:DataService){
   
-  this.transactionData=this.ds.getTransaction(this.ds.currentAcno)
+ this.ds.getTransaction(JSON.parse(localStorage.getItem("currentAcno") || "")).subscribe((result:any)=>{
+  this.transactionData=result.transaction
+ })
 
+  
  //console.log(this.transactionData);
   
 }

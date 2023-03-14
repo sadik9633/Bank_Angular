@@ -40,15 +40,19 @@ inputplaceholder="Account number"
  var acno=this.loginForm.value.acno
 var psw=this.loginForm.value.psw
 if(this.loginForm.valid){
- const result=this.ds.login(acno,psw)
- if(result){
-  alert('login success')
+ this.ds.login(acno,psw).subscribe
+ ((result:any)=>{
+  
+  localStorage.setItem("currentUser",JSON.stringify(result.currentUser))
+  localStorage.setItem("currentAcno",JSON.stringify(result. currentAcno))
+  localStorage.setItem("token",JSON.stringify(result.token))
+
+  alert(result.message)
   this.router.navigateByUrl('dashboard')
- }
- else{
-  alert("incorrect account number or password")
- }
- 
+ },
+ result=>{
+  alert(result.error.message)
+ })
  }
  else{
   alert('invalid form')
